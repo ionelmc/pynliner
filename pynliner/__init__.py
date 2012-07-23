@@ -224,7 +224,7 @@ class Pynliner(object):
 
         Returns self.output
         """
-        self.output = unicode(str(self.soup))
+        self.output = str(self.soup.renderContents())
         return self.output
 
 def fromURL(url, log=None):
