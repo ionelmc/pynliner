@@ -245,3 +245,11 @@ def fromString(string, log=None):
     """
     return Pynliner(log).from_string(string).run()
 
+def main():
+    import sys
+    if len(sys.argv) > 1:
+        print fromURL(sys.argv[1])
+    else:
+        print >> sys.stderr, 'Usage: %s URL' % sys.argv[0]
+        print >> sys.stderr
+        print >> sys.stderr, 'Will output to stdout the result of inlining the css for the given url.'
